@@ -21,3 +21,6 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/register', [AuthController::class, 'register']);
 
 Route::post('/send', [AuthController::class, 'send']);
+
+Route::get('/table',[DashboardController::class, 'table']);
+Route::get('/data-table',[DashboardController::class, 'dataTable']);
