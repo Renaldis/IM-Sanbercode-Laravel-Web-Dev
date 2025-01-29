@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -79,3 +80,6 @@ Route::delete("/genre/{genre_id}", [GenreController::class, "destroy"]);
 // CRUD
 // FILM
 Route::resource('film', FilmController::class);
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

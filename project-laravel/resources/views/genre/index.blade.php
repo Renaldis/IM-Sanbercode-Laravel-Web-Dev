@@ -25,9 +25,11 @@ List of Genre
                 @csrf
                 @method("DELETE")
                 <a href="/genre/{{$value->id}}" class="btn btn-info btn-sm">Detail</a>
+                @auth
                 <a href="/genre/{{$value->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
-                  <input type="submit" value="Delete" class="btn btn-danger btn-sm">
-                </form>
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                @endauth
+              </form>
             </td>
         </tr>
     @empty

@@ -39,7 +39,7 @@ Edit Film
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   <div class="mb-3">
-      <select name="genre_id" id="">
+      <select name="genre_id" id="" class="form-control">
         <option value="">--Pilih Genre--</option>
         @forelse ($genre as $value)
           @if ($value->id === $film->genre_id)

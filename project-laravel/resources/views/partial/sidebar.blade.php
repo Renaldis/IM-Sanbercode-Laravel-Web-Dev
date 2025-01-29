@@ -49,5 +49,36 @@
           </p>
         </a>
       </li>
+      @guest()
+      <li class="nav-item bg-info">
+        <a href="/login" class="nav-link">
+          <p>
+            Login
+          </p>
+        </a>
+      </li>
+      @endguest
+      @auth
+      <li class="nav-item">
+        <a href="/profile" class="nav-link">
+          <i class="nav-icon fas fa-user"></i>
+          <p>
+            Profile
+          </p>
+        </a>
+      </li> 
+
+      <li class="nav-item bg-danger">
+        <a class="nav-link" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+            Logout
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </li>
+    @endauth
     </ul>
   </nav>

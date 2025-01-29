@@ -12,10 +12,16 @@ class FilmController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(["index","show"]);
+    }
+
     public function index()
     {
         $film = Film::get();
-        return view("film.index", ["film" => $film]);
+        $genre = Genre::all();
+        return view("film.index", ["film" => $film, 'genre' => $genre]);
     }
 
     /**
