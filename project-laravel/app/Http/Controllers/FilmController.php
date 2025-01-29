@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Film;
 use App\Models\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FilmController extends Controller
 {
@@ -79,7 +80,35 @@ class FilmController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // untuk validasi handle error
+        $request->validate([
+            "title" => "required",
+            "summary"=> "required", 
+            "year" => "required", 
+            "poster" => "nullable|image|mimes:png,jpg,jpeg", 
+            "genre_id" => "required|exists:genre,id"
+        ]);
+
+        $film = Film::find($id);
+
+        if($request->has("poster")){
+            $path = public_path('images/');
+            File::delete($path. $film->poster);
+
+            //  mengambil data file
+            $fileName = time().'.'.$request->poster->extension();
+            $request->poster->move(public_path('images'), $fileName);
+            $film->poster = $fileName;
+            $film->save();
+        };
+
+        $film->title = $request->title;
+        $film->summary = $request->summary;
+        $film->year = $request->year;
+        $film->genre_id = $request->genre_id;
+        $film->save();
+
+        return redirect("/film");
     }
 
     /**

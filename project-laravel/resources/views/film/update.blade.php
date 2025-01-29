@@ -7,8 +7,9 @@ Edit Film
 @section('content')
 <a href="/film" class="btn btn-primary btn-sm">Back</a>
 
-<form action="/film" method="POST" enctype="multipart/form-data">
+<form action="/film/{{$film->id}}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method("PUT")
   <div class="mb-3">
     <label class="form-label">Judul Film</label>
     <input type="text" class="form-control" name="title" value="{{$film->title}}">
