@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CastController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -74,3 +75,7 @@ Route::put("/genre/{genre_id}", [GenreController::class, "update"]);
 
 // DELETE
 Route::delete("/genre/{genre_id}", [GenreController::class, "destroy"]);
+
+// CRUD
+// FILM
+Route::resource('film', FilmController::class);

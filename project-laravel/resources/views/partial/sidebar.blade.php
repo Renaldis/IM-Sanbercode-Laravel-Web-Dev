@@ -35,9 +35,17 @@
       </li>
       <li class="nav-item">
         <a href="/genre" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
+          <i class="nav-icon fas fa-list"></i>
           <p>
             Genre
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/film" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            Film
           </p>
         </a>
       </li>

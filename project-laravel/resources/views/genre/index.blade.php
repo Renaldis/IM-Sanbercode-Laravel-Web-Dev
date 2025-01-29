@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('judul')
-Create Genre
+List of Genre
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@ Create Genre
         </tr>
     @empty
     <tr>
-        <td>No users</td>
+        <td>No List of Genre</td>
     </tr>
     @endforelse
     </tbody>

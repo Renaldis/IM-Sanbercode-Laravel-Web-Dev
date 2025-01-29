@@ -20,6 +20,7 @@ class GenreController extends Controller
         // untuk menginsert data
         DB::table('genre')->insert([
             'name' => $request->name,
+            'created_at' => now(),
         ]);
         return redirect("/genre");
     }
