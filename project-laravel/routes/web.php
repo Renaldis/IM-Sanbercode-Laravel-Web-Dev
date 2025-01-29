@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CastController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -48,3 +49,28 @@ Route::put("/cast/{cast_id}", [CastController::class, 'update']);
 
 // DELETE
 Route::delete("/cast/{cast_id}", [CastController::class, 'destroy']);
+
+
+
+
+// FINAL-PROJECT
+// CRUD GENRE
+// CREATE
+Route::get("/genre/create", [GenreController::class, 'create']);
+// STORE DATA TO DATABASE
+Route::post("/genre", [GenreController::class, 'store']);
+
+// READ
+// READ DATA
+Route::get("/genre", [GenreController::class, "index"]);
+// Tampil Detail Data Genre
+Route::get("/genre/{genre_id}", [GenreController::class, 'show']);
+
+// UPDATE
+// MENGAMBIL DATA DAN MENAMPILKAN
+Route::get("/genre/{genre_id}/edit", [GenreController::class, "edit"]);
+// UPDATE DATA GENRE
+Route::put("/genre/{genre_id}", [GenreController::class, "update"]);
+
+// DELETE
+Route::delete("/genre/{genre_id}", [GenreController::class, "destroy"]);

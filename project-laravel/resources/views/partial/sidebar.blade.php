@@ -33,5 +33,13 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item">
+        <a href="/genre" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            Genre
+          </p>
+        </a>
+      </li>
     </ul>
   </nav>
