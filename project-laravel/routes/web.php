@@ -8,6 +8,7 @@ use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,10 +54,6 @@ Route::put("/cast/{cast_id}", [CastController::class, 'update']);
 // DELETE
 Route::delete("/cast/{cast_id}", [CastController::class, 'destroy']);
 
-});
-
-
-
 
 
 // FINAL-PROJECT
@@ -80,6 +77,10 @@ Route::put("/genre/{genre_id}", [GenreController::class, "update"]);
 
 // DELETE
 Route::delete("/genre/{genre_id}", [GenreController::class, "destroy"]);
+
+// PROFILE
+Route::resource("profile", ProfileController::class)->only(["index","update","create"]);
+});
 
 // CRUD
 // FILM
