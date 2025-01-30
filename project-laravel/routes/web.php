@@ -29,20 +29,21 @@ Route::post('/send', [AuthController::class, 'send']);
 Route::get('/table',[DashboardController::class, 'table']);
 Route::get('/data-table',[DashboardController::class, 'dataTable']);
 
-// CRUD CAST
+// MIDDLEWARE AUTH
+Route::middleware(["auth"])->group(function (){
 
-// Create
-// Form Tambah Cast
 Route::get("/cast/create", [CastController::class, 'create']);
 // menyimpan ke database
 Route::post("/cast", [CastController::class, 'store']);
-
+// CRUD CAST
 // READ
 // Tampil Semua Data Cast
 Route::get("/cast", [CastController::class, 'index']);
 // Tampil Detail Data Cast
 Route::get("/cast/{cast_id}", [CastController::class, 'show']);
 
+// Create
+// Form Tambah Cast
 // UPDATE
 // Mengambil Data dan menampilkan data yang akan di edit sesuai ID
 Route::get("/cast/{cast_id}/edit", [CastController::class, 'edit']);
@@ -51,6 +52,9 @@ Route::put("/cast/{cast_id}", [CastController::class, 'update']);
 
 // DELETE
 Route::delete("/cast/{cast_id}", [CastController::class, 'destroy']);
+
+});
+
 
 
 

@@ -19,14 +19,14 @@ Edit Film
     @enderror
   <div class="mb-3">
     <label class="form-label">Ringkasan</label>
-    <input type="text" class="form-control" name="summary" value="{{$film->summary}}">
+    <textarea class="form-control" name="summary" id="" cols="10" rows="5">{{$film->summary}}</textarea>
   </div>
     @error('summary')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   <div class="mb-3">
     <label class="form-label">Tahun Rilis</label>
-    <input type="date" class="form-control" name="year" value="{{$film->year}}">
+    <input type="number" class="form-control" name="year" value="{{$film->year}}">
   </div>
     @error('year')
     <div class="alert alert-danger">{{ $message }}</div>

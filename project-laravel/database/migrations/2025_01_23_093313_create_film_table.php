@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('film', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("summary");
-            $table->date("year");
+            $table->text("summary");
+            $table->integer("year");
             $table->string("poster");
             $table->unsignedBigInteger("genre_id");
             $table->foreign("genre_id")->references("id")->on("genre");

@@ -13,7 +13,7 @@ class CastController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required',
             'age' => 'required',
             'bio' => 'required',

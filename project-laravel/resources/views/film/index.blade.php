@@ -16,9 +16,7 @@ Halaman List Film
             <div class="card-body">
                 <h3 class="card-title">{{$item->title}}</h3>
                 <p class="card-text">{{Str::limit($item->summary,200)}}</p>
-                {{-- <p class="card-title">
-                    <strong>Genre:</strong> {{ $film->genre_id ?? 'Tidak ada genre' }}
-                </p> --}}
+
                 <a href="/film/{{$item->id}}" class="btn btn-secondary btn-block btn-sm">Detail Film</a>
                 @auth
                 <div class="row my-2">
