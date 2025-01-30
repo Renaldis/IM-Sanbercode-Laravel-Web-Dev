@@ -8,6 +8,17 @@ Update Profile
 <form action="/profile/{{$detailProfile->id}}" method="POST">
     @csrf
     @method("PUT")
+
+  <div class="mb-3">
+    <label>Nama User</label>
+    <input type="text" class="form-control" value="{{$detailProfile->user->name}}" disabled>
+  </div>
+  <div class="mb-3">
+    <label>Email User</label>
+    <input type="text" class="form-control" value="{{$detailProfile->user->email}}" disabled>
+  </div>
+
+
   <div class="mb-3">
     <label class="form-label">Umur</label>
     <input type="number" class="form-control" name="age" value="{{$detailProfile->age}}">

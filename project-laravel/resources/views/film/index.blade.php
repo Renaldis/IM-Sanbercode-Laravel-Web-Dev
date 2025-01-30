@@ -14,7 +14,8 @@ Halaman List Film
         <div class="card overflow-hidden">
             <img src="/images/{{$item->poster}}" class="card-img-top img-fluid" alt="..." style="height: 200px; object-fit: cover;">
             <div class="card-body">
-                <h3 class="card-title">{{$item->title}}</h3>
+                <h3>{{$item->title}}</h3>
+                <span class="badge badge-info">{{$item->genre->name}}</span>
                 <p class="card-text">{{Str::limit($item->summary,200)}}</p>
 
                 <a href="/film/{{$item->id}}" class="btn btn-secondary btn-block btn-sm">Detail Film</a>

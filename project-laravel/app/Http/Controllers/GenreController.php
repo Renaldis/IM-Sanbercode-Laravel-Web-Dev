@@ -35,7 +35,8 @@ class GenreController extends Controller
 
     public function show($id)
     {
-        $genre = DB::table("genre")->where("id", $id)->first();
+        // $genre = DB::table("genre")->where("id", $id)->first();
+        $genre = Genre::find($id);
         return view("genre.detail", ["genre" => $genre]);
 
     }
