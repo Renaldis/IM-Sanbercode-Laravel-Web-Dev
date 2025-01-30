@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,9 @@ Route::delete("/genre/{genre_id}", [GenreController::class, "destroy"]);
 
 // PROFILE
 Route::resource("profile", ProfileController::class)->only(["index","update","create"]);
+
+// Review_film
+Route::post("/review/{film_id}",[ReviewController::class, "create"]);
 });
 
 // CRUD

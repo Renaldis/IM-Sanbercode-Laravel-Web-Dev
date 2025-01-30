@@ -13,7 +13,12 @@
         <img src="{{asset('/template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">{{Auth::user()->name}} ({{Auth::user()->profile->age}})</a>
+        @auth
+        <a href="#" class="d-block">{{Auth::user()->name}} ({{Auth::user()->profile->age}})</a>   
+        @endauth
+        @guest
+        <a href="#" class="d-block">Unknown</a>      
+        @endguest
       </div>
     </div>
 
@@ -65,7 +70,7 @@
       </li>
       <li class="nav-item">
         <a href="/genre" class="nav-link">
-          <i class="nav-icon fas fa-list"></i>
+          <i class="nav-icon fas fa-layer-group"></i>
           <p>
             Genre
           </p>
@@ -73,7 +78,7 @@
       </li>
       <li class="nav-item">
         <a href="/film" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
+          <i class="nav-icon fas fa-film"></i>
           <p>
             Film
           </p>
